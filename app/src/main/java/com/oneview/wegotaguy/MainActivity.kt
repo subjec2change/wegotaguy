@@ -6,21 +6,12 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.net.wifi.WifiManager
-import android.os.Bundle
 import android.os.IBinder
 import android.os.PowerManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 
-
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
-}
 
 class WifiService : Service() {
 
@@ -36,8 +27,8 @@ class WifiService : Service() {
         // create notification channel if necessary
         val channel = NotificationChannel(
             NOTIFICATION_CHANNEL_ID,
-            "Wi-Fi ADT Service",
-            NotificationManager.IMPORTANCE_HIGH
+            "Wifi Service Channel",
+            NotificationManager.IMPORTANCE_DEFAULT
         )
         val manager = getSystemService(NotificationManager::class.java)
         manager?.createNotificationChannel(channel)
@@ -47,21 +38,20 @@ class WifiService : Service() {
 
         val intent = Intent(this, WifiService::class.java)
         ContextCompat.startForegroundService(this, intent)
+
+
         // build notification
         val notification = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
-            .setContentTitle("Wi-Fi ADT Service")
-            .setContentText("We Got A Guy :^)")
-            .setSmallIcon(R.drawable.dcb)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setContentTitle("Wi-Fi Service")
+            .setContentText("Keeping Wi-Fi on while asleep")
+            .setSmallIcon(R.drawable.ic_wifi_service)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .build()
+        // start service in foreground mode
+        startForeground(NOTIFICATION_ID, notification)
         // Register the channel with the system
         val notificationManager: NotificationManager =
             getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-
-        notificationManager.createNotificationChannel(channel)
-
-        // start service in foreground mode
-        startForeground(NOTIFICATION_ID, notification)
         // get Wi-Fi manager
         val wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
 
