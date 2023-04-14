@@ -44,7 +44,7 @@ class WifiService : Service() {
         val notification = NotificationCompat.Builder(this, NOTIFICATION_CHANNEL_ID)
             .setContentTitle("Wi-Fi Service")
             .setContentText("Keeping Wi-Fi on while asleep")
-            .setSmallIcon(R.drawable.ic_wifi_service)
+            .setSmallIcon(R.drawable.dcb)
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
             .build()
         // start service in foreground mode
