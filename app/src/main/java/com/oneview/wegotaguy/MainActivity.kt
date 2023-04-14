@@ -28,7 +28,7 @@ class WifiService : Service() {
         val channel = NotificationChannel(
             NOTIFICATION_CHANNEL_ID,
             "Wifi Service Channel",
-            NotificationManager.IMPORTANCE_DEFAULT
+            NotificationManager.IMPORTANCE_HIGH
         )
         val manager = getSystemService(NotificationManager::class.java)
         manager?.createNotificationChannel(channel)
@@ -37,7 +37,7 @@ class WifiService : Service() {
         startService(intent)
 
         //val intent = Intent(this, WifiService::class.java)
-        //ContextCompat.startForegroundService(this, intent)
+        ContextCompat.startForegroundService(this, intent)
 
 
         // build notification
