@@ -1,15 +1,15 @@
 package com.oneview.wegotaguy
 
-import androidx.appcompat.app.AppCompatActivity
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.os.Bundle
 import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.net.wifi.WifiManager
+import android.os.Bundle
 import android.os.IBinder
 import android.os.PowerManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
@@ -54,6 +54,11 @@ class WifiService : Service() {
             .setSmallIcon(R.drawable.dcb)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .build()
+        // Register the channel with the system
+        val notificationManager: NotificationManager =
+            getSystemService(NOTIFICATION_SERVICE) as NotificationManager
+
+        notificationManager.createNotificationChannel(channel)
 
         // start service in foreground mode
         startForeground(NOTIFICATION_ID, notification)
@@ -88,5 +93,8 @@ class WifiService : Service() {
         // release locks
         wifiLock.release()
         wakeLock.release()
+
+        // remove notification
+        NotificationManagerCompat.from(this).cancel(NOTIFICATION_ID)
     }
 }
