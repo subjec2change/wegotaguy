@@ -33,11 +33,11 @@ class WifiService : Service() {
         val manager = getSystemService(NotificationManager::class.java)
         manager?.createNotificationChannel(channel)
         // On God
-        //val intent = Intent(this, WifiService::class.java)
-        //startService(intent)
-
         val intent = Intent(this, WifiService::class.java)
-        ContextCompat.startForegroundService(this, intent)
+        startService(intent)
+
+        //val intent = Intent(this, WifiService::class.java)
+        //ContextCompat.startForegroundService(this, intent)
 
 
         // build notification
@@ -45,7 +45,7 @@ class WifiService : Service() {
             .setContentTitle("Wi-Fi Service")
             .setContentText("Keeping Wi-Fi on while asleep")
             .setSmallIcon(R.drawable.dcb)
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
             .build()
         // start service in foreground mode
         startForeground(NOTIFICATION_ID, notification)
