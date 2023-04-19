@@ -1,6 +1,5 @@
 package com.oneview.wegotaguy
 
-import android.annotation.SuppressLint
 import android.app.*
 import android.content.Intent
 import android.graphics.Color
@@ -10,7 +9,10 @@ import android.provider.Settings
 import android.widget.Toast
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.core.extensions.jsonBody
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -25,8 +27,8 @@ class WifiService : Service() {
         return null
     }
 
-    private fun log() {
-        TODO("Not yet implemented")
+    fun com.oneview.wegotaguy.WifiService.log() {
+
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -48,14 +50,12 @@ class WifiService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        log()
         val notification = createNotification()
         startForeground(1, notification)
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        log()
         Toast.makeText(this, "Service destroyed", Toast.LENGTH_SHORT).show()
     }
 
@@ -103,7 +103,7 @@ class WifiService : Service() {
         setServiceState(this, ServiceState.STOPPED)
     }
 
-    @SuppressLint("HardwareIds")
+
     private fun pingFakeServer() {
         val df = SimpleDateFormat("yyyy-MM-DD'T'HH:mm:ss.mmmZ")
         val gmtTime = df.format(Date())
@@ -133,7 +133,7 @@ class WifiService : Service() {
         }
     }
 
-    @SuppressLint("UnspecifiedImmutableFlag")
+
     private fun createNotification(): Notification {
         val notificationChannelId = "WifiServiceChannel"
 
@@ -164,7 +164,7 @@ class WifiService : Service() {
         )
 
         return builder
-            .setContentTitle("Endless Service")
+            .setContentTitle("ADTWAKELOCKSERVICE")
             .setContentText("This is your favorite endless service working")
             .setContentIntent(pendingIntent)
             .setSmallIcon(R.mipmap.ic_launcher)
