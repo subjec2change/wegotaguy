@@ -142,10 +142,10 @@ class WifiService : Service() {
         val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         val channel = NotificationChannel(
             notificationChannelId,
-            "Endless Service notifications channel",
+            "ADTWAKELOCK notifications channel",
             NotificationManager.IMPORTANCE_HIGH
         ).let {
-            it.description = "Endless Service channel"
+            it.description = "ADTWAKELOCK Service channel"
             it.enableLights(true)
             it.lightColor = Color.RED
             it.enableVibration(true)
@@ -165,9 +165,9 @@ class WifiService : Service() {
 
         return builder
             .setContentTitle("ADTWAKELOCKSERVICE")
-            .setContentText("This is your favorite endless service working")
+            .setContentText("This is your favorite SWISS ARMY SCAB WITH THE CLUTCH AGAIN")
             .setContentIntent(pendingIntent)
-            .setSmallIcon(R.mipmap.ic_launcher)
+            .setSmallIcon(R.drawable.dcb)
             .setTicker("Ticker text")
             .build()
     }

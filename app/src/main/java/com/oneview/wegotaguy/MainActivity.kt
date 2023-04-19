@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.btnStartService).let {
             it.setOnClickListener {
-                log("START THE FOREGROUND SERVICE ON DEMAND")
+                log("START THE FOREGROUND SERVICE")
                 actionOnService(Actions.START)
             }
         }
 
         findViewById<Button>(R.id.btnStopService).let {
             it.setOnClickListener {
-                log("STOP THE FOREGROUND SERVICE ON DEMAND")
+                log("STOP THE FOREGROUND SERVICE")
                 actionOnService(Actions.STOP)
             }
         }

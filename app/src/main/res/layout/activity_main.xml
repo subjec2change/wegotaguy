@@ -7,25 +7,49 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginBottom="1938dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStopService">
 
-
-        <Button
-            android:id="@+id/btnStartService"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingTop="20dp"
-            android:text="Start Foreground Service" />
-
-        <Button
-            android:id="@+id/btnStopService"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Stop Foreground Service" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="2100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStopService"
+        app:srcCompat="@drawable/flavortown" />
+
+    <Button
+        android:id="@+id/btnStartService"
+        android:layout_width="1006dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="16dp"
+        android:paddingTop="20dp"
+        android:text="Start Foreground Service"
+        app:layout_constraintBottom_toTopOf="@+id/btnStopService"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnStopService"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="136dp"
+        android:text="Stop Foreground Service"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
