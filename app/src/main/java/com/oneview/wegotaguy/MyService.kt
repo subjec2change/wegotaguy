@@ -63,7 +63,7 @@ import androidx.core.app.NotificationCompat
 
             // acquire locks
             wifiLock.acquire()
-            wakeLock.acquire(1)
+            wakeLock.acquire()
         }
 
         override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
