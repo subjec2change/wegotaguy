@@ -12,10 +12,10 @@ android {
         minSdk 26
         targetSdk 33
         versionCode 1
-        versionName "1.2"
+        versionName '1.4'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.debug
+        testApplicationId 'com.oneview.wegotaguy.debug'
     }
 
     buildTypes {
@@ -40,7 +40,9 @@ android {
 }
 
 dependencies {
-    androidTestImplementation('androidx.test.espresso:espresso-core:3.5.1')
+    implementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'androidx.core:core-ktx:1.10.0'
+    releaseImplementation('androidx.test.espresso:espresso-core:3.5.1')
     androidTestImplementation('androidx.test:runner:1.5.2')
     androidTestImplementation('androidx.test:rules:1.5.0')
     implementation 'androidx.core:core-ktx:1.10.0'

@@ -21,8 +21,9 @@ class StartReceiver : BroadcastReceiver() {
             }
         }
     }
-
     private fun log() {
-        TODO("Not yet implemented")
+        if (BuildConfig.DEBUG) {
+            println("StartReceiver")
+        }
     }
 }
