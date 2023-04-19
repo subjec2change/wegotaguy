@@ -13,7 +13,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/flavortown" />
+        app:srcCompat="@drawable/flavortown"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageView6"
