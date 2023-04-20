@@ -16,10 +16,13 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
+
+
 class WifiService : Service() {
 
     private var wakeLock: PowerManager.WakeLock? = null
     private var isServiceStarted = false
+
 
     override fun onBind(intent: Intent): IBinder? {
         log()
