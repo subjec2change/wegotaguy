@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        title = "ADTWAKELOCKSERVICE"
+        title = "ADT WAKE LOCK SERVICE"
 
         findViewById<Button>(R.id.btnStartService).let {
             it.setOnClickListener {

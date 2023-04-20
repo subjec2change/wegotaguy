@@ -69,7 +69,7 @@ class WifiService : Service() {
         // we need this lock so our service gets not affected by Doze Mode
         wakeLock =
             (getSystemService(POWER_SERVICE) as PowerManager).run {
-                newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "EndlessService::lock").apply {
+                newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "ADTWAKELOCK::lock").apply {
                     acquire()
                 }
             }
