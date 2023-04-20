@@ -4,7 +4,7 @@ WeGotAGuy:tm: :smile:
 
 Debug & Release Debut!
 
-This is Early Access sotospeak as this is V1.4 Since Ive built and tested 4 times without the results i want but please feel free to help test this Wake Lock App
+This is Early Access sotospeak as this is V1.4 Since Ive built and tested 4 times without the results I wanted, but please feel free to help test this Wake Lock App
 It should work on Wireless Android Devices running 9-13
 -----------------------------------------------------------------
 Added Auto Start of WifiWakeLock For ADT as part of the App launching
