@@ -13,3 +13,12 @@ Try it buy opening the app for the first time or use:
 $ adb shell am start -n "com.oneview.wegotaguy/com.oneview.wegotaguy.MainActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
 -----------------------------------------------------------------
 Changed the background to save on APK size because..why not.
+
+-----------------------------------------------------------------
+V1.5
+
+Changed the Target SDK down to 29(Quince Tart) from 33(Tiramisu) for more compatibility
+
+A few Tweaks here and there to clean up loose ends
+
+1.5 APK to come soon.
