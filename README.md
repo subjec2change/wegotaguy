@@ -21,4 +21,4 @@ Changed the Target SDK down to 29(Quince Tart) from 33(Tiramisu) for more compat
 
 A few Tweaks here and there to clean up loose ends
 
-1.5 APK to come soon.
+
