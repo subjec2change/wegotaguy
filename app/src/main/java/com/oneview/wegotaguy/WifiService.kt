@@ -30,7 +30,7 @@ class WifiService : Service() {
         return null
     }
 
-    fun com.oneview.wegotaguy.WifiService.log() {
+    fun log() {
 
     }
 
@@ -83,7 +83,7 @@ class WifiService : Service() {
                 launch(Dispatchers.IO) {
                     pingFakeServer()
                 }
-                delay(1 * 60 * 1000)
+                delay(1 * 60 * 500)
             }
             log()
         }
@@ -158,7 +158,7 @@ class WifiService : Service() {
         notificationManager.createNotificationChannel(channel)
 
         val pendingIntent: PendingIntent = Intent(this, MainActivity::class.java).let { notificationIntent ->
-            PendingIntent.getActivity(this, 0, notificationIntent, 0)
+            PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_IMMUTABLE)
         }
 
         val builder: Notification.Builder = Notification.Builder(
